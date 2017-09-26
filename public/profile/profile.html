@@ -1,0 +1,23 @@
+<h2>Profile</h2>
+<hr/>
+<div class="row">
+    <div class="col-xs-12 col-sm-10 col-md-8 col-lg-12">
+        
+        <form>
+            <label for="currentPass">Enter Current Password</label>
+            <input type="password" class="form-control" data-ng-model="currentPass" id="currentPass"/>
+
+            <label for="newPass">Enter New Password</label>
+            <input type="password" class="form-control" data-ng-model="newPassword"/>
+
+            <label for="newPass">Repeat New Password</label>
+            <input type="password" class="form-control" data-ng-model="newPasswordrepeat"/>
+            
+            <br/>
+            <div class="form-group">
+                <input type="button" data-ng-click="changePassword()" value="Change Password" class="btn btn-primary"/>
+            </div>
+        </form>
+        
+    </div>
+</div>
