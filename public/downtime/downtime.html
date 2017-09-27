@@ -189,38 +189,41 @@
                   </select>
                </div>
                 
-                <div>
-                    <div class="row" style="margin: 5px">
-                      <div class="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                        <label for="date">Start of Downtime</label>
-                            <br>
-                        <p class="input-group">
-                          <input type="text" class="form-control" uib-datepicker-popup="dd/mm/yyyy H:m" ng-model="startDT" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" placeholder="Day-Month-Year Hour:Minute" />
-                          <span class="input-group-btn">
-                            <button type="button" class="btn btn-default" ng-click="open1()"><i class="fa fa-calendar"></i></button>
-                          </span>
-                        </p>
-                          {{startDT}}
-                      </div>
-                    
-                      <div class="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                        <label for="date">End of Downtime</label>
-                            <br>
-                          <p class="input-group">
-                          <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="endDT" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" placeholder="Day-Month-Year Hour:Minute" />
-                          <span class="input-group-btn">
-                            <button type="button" class="btn btn-default" ng-click="open2()"><i class="fa fa-calendar"></i></button>
-                          </span>
-                        </p>
-                          {{endDT | date:'dd/MM/yyyy HH:mm a' }}
-                      </div>
-                    </div>
-                    <div class="row" style="margin: 5px">
-                      <div class="col-md-6">
-                        <label>Format: </label> <select class="form-control" ng-model="format" ng-options="f for f in formats"><option></option></select>
-                      </div>
-                    </div>
+               <div class="container">
+    <form action="" class="form-horizontal"  role="form">
+        <fieldset>
+            <legend>Test</legend>
+            <div class="form-group">
+                <label for="dtp_input1" class="col-md-2 control-label">DateTime Picking</label>
+                <div class="input-group date form_datetime col-md-5" data-date="1979-09-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+                    <input class="form-control" size="16" type="text" value="" readonly>
+                    <span class="input-group-addon"><span class="fa fa-remove"></span></span>
+					<span class="input-group-addon"><span class="fa fa-calendar"></span></span>
                 </div>
+				<input type="hidden" id="dtp_input1" value="" /><br/>
+            </div>
+			<div class="form-group">
+                <label for="dtp_input2" class="col-md-2 control-label">Date Picking</label>
+                <div class="input-group date form_date col-md-5" data-date="" data-date-format="dd MM yyyy" data-link-field="dtp_input2" data-link-format="yyyy-mm-dd">
+                    <input class="form-control" size="16" type="text" value="" readonly>
+                    <span class="input-group-addon"><span class="fa fa-remove"></span></span>
+					<span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                </div>
+				<input type="hidden" id="dtp_input2" value="" /><br/>
+            </div>
+			<div class="form-group">
+                <label for="dtp_input3" class="col-md-2 control-label">Time Picking</label>
+                <div class="input-group date form_time col-md-5" data-date="" data-date-format="hh:ii" data-link-field="dtp_input3" data-link-format="hh:ii">
+                    <input class="form-control" size="16" type="text" value="" readonly>
+                    <span class="input-group-addon"><span class="fa fa-remove"></span></span>
+					<span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                </div>
+				<input type="hidden" id="dtp_input3" value="" /><br/>
+            </div>
+        </fieldset>
+        <input type="reset" class="btn btn-primary" role="button" style="margin:20px" data-ng-click="resetGraph()"/>
+    </form>
+</div>
                 
             </div>
          </div>
