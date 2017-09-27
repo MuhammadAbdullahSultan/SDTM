@@ -188,47 +188,38 @@
                      <option>Standby</option>
                   </select>
                </div>
-               <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                  <label for="date">Start of Downtime</label>
-                  <input type="text" class="form-control" placeholder="Day, Month, Year" data-ng-model="startDT" id="datetimepicker1"/>
-               </div>
-               <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                  <label for="date">End of Downtime</label>
-                  <input type="text" class="form-control" placeholder="Day, Month, Year" data-ng-model="endDT" id="datetimepicker3"/>
-               </div>
                 
                 <div ng-controller="DatepickerPopupDemoCtrl">
-                    <pre>Selected date is: <em>{{dt | date:'fullDate' }}</em></pre>
-                    <div class="row">
-                      <div class="col-md-6">
+                    <div class="row" style="margin: 5px">
+                      <div class="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <label for="date">Start of Downtime</label>
+                            <br>
                         <p class="input-group">
-                          <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dt" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" />
+                          <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="startDT" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" placeholder="Day-Month-Year Hour:Minute" />
                           <span class="input-group-btn">
                             <button type="button" class="btn btn-default" ng-click="open1()"><i class="fa fa-calendar"></i></button>
                           </span>
                         </p>
+                          {{startDT | date:'fullDate' }}
                       </div>
-
-                      <div class="col-md-6">
-                        <p class="input-group">
-                          <input type="text" class="form-control" uib-datepicker-popup ng-model="dt" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" />
+                    
+                      <div class="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <label for="date">End of Downtime</label>
+                            <br>
+                          <p class="input-group">
+                          <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="endDT" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" placeholder="Day-Month-Year Hour:Minute" />
                           <span class="input-group-btn">
                             <button type="button" class="btn btn-default" ng-click="open2()"><i class="fa fa-calendar"></i></button>
                           </span>
                         </p>
+                          {{endDT | date:'fullDate' }}
                       </div>
                     </div>
-                    <div class="row">
+                    <div class="row" style="margin: 5px">
                       <div class="col-md-6">
-                        <label>Format: <span class="muted-text">(manual alternate <em>{{altInputFormats[0]}}</em>)</span></label> <select class="form-control" ng-model="format" ng-options="f for f in formats"><option></option></select>
+                        <label>Format: </label> <select class="form-control" ng-model="format" ng-options="f for f in formats"><option></option></select>
                       </div>
                     </div>
-
-                    <hr />
-                    <button type="button" class="btn btn-sm btn-info" ng-click="today()">Today</button>
-                    <button type="button" class="btn btn-sm btn-default" ng-click="setDate(2009, 7, 24)">2009-08-24</button>
-                    <button type="button" class="btn btn-sm btn-danger" ng-click="clear()">Clear</button>
-                    <button type="button" class="btn btn-sm btn-default" ng-click="toggleMin()" uib-tooltip="After today restriction">Min date</button>
                 </div>
                 
             </div>

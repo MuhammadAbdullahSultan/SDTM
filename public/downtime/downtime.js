@@ -111,12 +111,12 @@ app.controller('downtimeCtrl', ['$scope', '$firebaseObject', '$firebaseArray', '
             
 
     
-    $(document).ready(function () {
-    
-
-        $('#datetimepicker1').datetimepicker({
-            viewMode: 'years',
-            format: 'DD/MM/YYYY hh:mm'
+//    $(document).ready(function () {
+//    
+//
+//        $('#datetimepicker1').datetimepicker({
+//            viewMode: 'years',
+//            format: 'DD/MM/YYYY hh:mm'
             
             
 //            if ($scope.startDT > $.now()) 
@@ -124,40 +124,40 @@ app.controller('downtimeCtrl', ['$scope', '$firebaseObject', '$firebaseArray', '
 //            toaster.pop({type: 'warning', title: "Start Time Empty", body: "Please enter a start time"});
 //            }
 //        }
-        }); 
+//        }); 
         
-        $('#datetimepicker3').datetimepicker({
-            viewMode: 'years',
-            format: 'DD/MM/YYYY hh:mm'
-
-        });
-        
-        $('#datetimepickerSearch').datetimepicker({
-            viewMode: 'years',
-            format: 'DD/MM/YYYY'
-
-        });
-        
-        
-        $("#datetimepicker1").on("dp.change", function() {
-
-        $scope.startDT = $("#datetimepicker1").val();
-
-    });
-        
-        $("#datetimepicker3").on("dp.change", function() {
-
-        $scope.endDT = $("#datetimepicker3").val();
-
-    });
-        
-        $("#datetimepickerSearch").on("dp.change", function() {
-
-        $scope.start = $("#datetimepickerSearch").val();
-
-    });
-        
-});
+//        $('#datetimepicker3').datetimepicker({
+//            viewMode: 'years',
+//            format: 'DD/MM/YYYY hh:mm'
+//
+//        });
+//        
+//        $('#datetimepickerSearch').datetimepicker({
+//            viewMode: 'years',
+//            format: 'DD/MM/YYYY'
+//
+//        });
+//        
+//        
+//        $("#datetimepicker1").on("dp.change", function() {
+//
+//        $scope.startDT = $("#datetimepicker1").val();
+//
+//    });
+//        
+//        $("#datetimepicker3").on("dp.change", function() {
+//
+//        $scope.endDT = $("#datetimepicker3").val();
+//
+//    });
+//        
+//        $("#datetimepickerSearch").on("dp.change", function() {
+//
+//        $scope.start = $("#datetimepickerSearch").val();
+//
+//    });
+//        
+//});
     
         $scope.totalItems = $scope.data.length;
       $scope.currentPage = 1;

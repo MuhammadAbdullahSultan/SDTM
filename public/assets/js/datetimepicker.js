@@ -1,12 +1,16 @@
 var app=angular.module('datetimepicker', ['ngAnimate', 'ngSanitize', 'ui.bootstrap']);
 app.controller('DatepickerPopupDemoCtrl', function ($scope) {
   $scope.today = function() {
-    $scope.dt = new Date();
+    $scope.startDT = new Date();
+    $scope.endDT = new Date();
+
   };
   $scope.today();
 
   $scope.clear = function() {
-    $scope.dt = null;
+    $scope.startDT = null;
+    $scope.endDT = null;
+
   };
 
   $scope.inlineOptions = {
@@ -16,8 +20,7 @@ app.controller('DatepickerPopupDemoCtrl', function ($scope) {
   };
 
   $scope.dateOptions = {
-    dateDisabled: disabled,
-    formatYear: 'yy',
+    formatYear: 'yyyy',
     maxDate: new Date(2020, 5, 22),
     minDate: new Date(),
     startingDay: 1
@@ -46,10 +49,12 @@ app.controller('DatepickerPopupDemoCtrl', function ($scope) {
   };
 
   $scope.setDate = function(year, month, day) {
-    $scope.dt = new Date(year, month, day);
+    $scope.startDT = new Date(year, month, day);
+    $scope.endDT = new Date(year, month, day);
+
   };
 
-  $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+  $scope.formats = ['dd-MMMM-yyyy hh:mm', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
   $scope.format = $scope.formats[0];
   $scope.altInputFormats = ['M!/d!/yyyy'];
 

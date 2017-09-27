@@ -14,40 +14,40 @@ app.controller('sdtCtrl', ['$scope', '$firebaseObject', '$firebaseArray', functi
     
     
     
-    $(document).ready(function () {
-    
-
-        $('#datetimepicker2').datetimepicker({
-            viewMode: 'years'
-        }); 
-        
-        $('#datetimepicker10').datetimepicker({
-                viewMode: 'years',
-                format: 'MM/YYYY'
-            });
-        
-        $('#datetimepicker11').datetimepicker({
-                viewMode: 'years',
-                format: 'YYYY'
-            });
-        
-        $("#datetimepicker11").on("dp.change", function() {
-
-        $scope.yearFilter = $("#datetimepicker11").val();
-
-    });
-        
-        $("#datetimepicker10").on("dp.change", function() {
-
-        $scope.monthFilter = $("#datetimepicker10").val();
-
-    });
-        
-        $("#datetimepicker2").on("dp.change", function() {
-
-        $scope.dateFilter = $("#datetimepicker2").val();
-
-    });
-});
-      
+//    $(document).ready(function () {
+//    
+//
+//        $('#datetimepicker2').datetimepicker({
+//            viewMode: 'years'
+//        }); 
+//        
+//        $('#datetimepicker10').datetimepicker({
+//                viewMode: 'years',
+//                format: 'MM/YYYY'
+//            });
+//        
+//        $('#datetimepicker11').datetimepicker({
+//                viewMode: 'years',
+//                format: 'YYYY'
+//            });
+//        
+//        $("#datetimepicker11").on("dp.change", function() {
+//
+//        $scope.yearFilter = $("#datetimepicker11").val();
+//
+//    });
+//        
+//        $("#datetimepicker10").on("dp.change", function() {
+//
+//        $scope.monthFilter = $("#datetimepicker10").val();
+//
+//    });
+//        
+//        $("#datetimepicker2").on("dp.change", function() {
+//
+//        $scope.dateFilter = $("#datetimepicker2").val();
+//
+//    });
+//});
+//      
 }]);
