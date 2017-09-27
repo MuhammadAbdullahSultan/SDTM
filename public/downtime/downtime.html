@@ -195,12 +195,12 @@
                         <label for="date">Start of Downtime</label>
                             <br>
                         <p class="input-group">
-                          <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="startDT" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" placeholder="Day-Month-Year Hour:Minute" />
+                          <input type="text" class="form-control" uib-datepicker-popup="dd/mm/yyyy H:m" ng-model="startDT" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" placeholder="Day-Month-Year Hour:Minute" />
                           <span class="input-group-btn">
                             <button type="button" class="btn btn-default" ng-click="open1()"><i class="fa fa-calendar"></i></button>
                           </span>
                         </p>
-                          {{startDT | date:'dd/MM/yyyy HH:mm a' }}
+                          {{startDT}}
                       </div>
                     
                       <div class="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6">
