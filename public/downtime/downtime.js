@@ -274,6 +274,14 @@ app.controller('downtimeCtrl', ['$scope', '$firebaseObject', '$firebaseArray', '
     return '';
   }
     
+    // CHECK FOR EMPTY DATA IN TABLE
+    
+    var tbody = $("#downtimeData tbody");
+
+if (tbody.children().length == 0) {
+    tbody.html("<tr>message foo</tr>");
+}
+    
 
 }]);
 

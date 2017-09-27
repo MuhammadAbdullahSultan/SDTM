@@ -221,10 +221,11 @@
                      <th id="type">Type</th>
                   </tr>
                </thead>
-               <tbody>
+               <tbody id="downtimeData">
                   <tr data-ng-repeat="d in allDT | filter: equipment | filter: type | filter: obj | filter: start track by $index" data-ng-if="d != null">
                      <td headers = "equipment">{{d.equipment}}</td>
                      <td headers = "start">{{d.start}}</td>
+                     <td data-ng-if="">NO DATA TO SHOW</td>
                      <td headers = "end">{{d.end}}</td>
                      <td headers = "type">{{d.type}}</td>
                   </tr>
