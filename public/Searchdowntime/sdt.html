@@ -82,69 +82,54 @@
 <hr/>
 
 <form>
-<div class="row" class="mx-auto" style="margin-left: 5px, margin-right: 5px width: 200px;">
-    <span class="col-xs-12">
-    <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12 date txtsize" id="equipList">
-         <label for="date">Selection of Year</label>
-         <input type="text" id="datetimepicker11" class="form-control" placeholder="Year" data-ng-model="yearFilter"/>
-      </div>
-        {{yearFilter}}
-    
-    <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12 date txtsize" id="equipList">
-         <label for="date">Selection of Month</label>
-         <input type="text" class="form-control" id="datetimepicker10" placeholder="Month, Year" data-ng-model="monthFilter"/>
-      </div>
-        
-        {{monthFilter}}
-    
-    <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12 date txtsize" id="equipList">
-         <label for="date">Select Day Downtime</label>
-         <input type="text" id="datetimepicker2" class="form-control" placeholder="Day, Month, Year" data-ng-model="dateFilter"/>
-      </div>
-        
-        {{dateFilter}}
-        
-        <br>
-    
-        <input type="reset" class="btn btn-primary" role="button" style="margin-left:15px" data-ng-click="resetGraph()"/>
-        
-    </span>
-
-</div>
     
     <div ng-controller="DatepickerPopupDemoCtrl">
                     <div class="row" style="margin: 5px">
                       <div class="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                        <label for="date">Start of Downtime</label>
+                        <label for="date">Select Year</label>
                             <br>
                         <p class="input-group">
-                          <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="startDT" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" placeholder="Day-Month-Year Hour:Minute" />
+                          <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="yearFilter" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" placeholder="Year" />
                           <span class="input-group-btn">
-                            <button type="button" class="btn btn-default" ng-click="open1()"><i class="fa fa-calendar"></i></button>
+                            <button type="button" class="btn btn-default" ng-click="open3()"><i class="fa fa-calendar"></i></button>
                           </span>
                         </p>
-                          {{startDT | date:'fullDate' }}
-                      </div>
-                    
-                      <div class="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6">
-                        <label for="date">End of Downtime</label>
-                            <br>
-                          <p class="input-group">
-                          <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="endDT" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" placeholder="Day-Month-Year Hour:Minute" />
-                          <span class="input-group-btn">
-                            <button type="button" class="btn btn-default" ng-click="open2()"><i class="fa fa-calendar"></i></button>
-                          </span>
-                        </p>
-                          {{endDT | date:'fullDate' }}
+                          {{yearFilter | date:'yyyy' }}
                       </div>
                     </div>
+        
                     <div class="row" style="margin: 5px">
-                      <div class="col-md-6">
-                        <label>Format: </label> <select class="form-control" ng-model="format" ng-options="f for f in formats"><option></option></select>
-                      </div>
+                        <div class="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <label for="date">Select Month</label>
+                            <br>
+                            <p class="input-group">
+                                <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="monthFilter" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" placeholder="Month-Year" />
+                            <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="open4()"><i class="fa fa-calendar"></i></button>
+                                </span>
+                            </p>
+                            {{monthFilter | date:'MM/yyyy' }}
+                        </div>
                     </div>
+        
+                   <div class="row" style="margin: 5px">
+                        <div class="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                            <label for="date">Select Date</label>
+                            <br>
+                            <p class="input-group">
+                                <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="dayFilter" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" placeholder="Day-Month-Year" />
+                            <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="open5()"><i class="fa fa-calendar"></i></button>
+                                </span>
+                            </p>
+                            {{dayFilter | date:'dd/MM/yyyy' }}
+                        </div>
+                    </div>
+        
                 </div>
-
+    
+        <input type="reset" class="btn btn-primary" role="button" style="margin:20px" data-ng-click="resetGraph()"/>
+    
 </form>
 
 <div class="modal fade" id="viewGraph">

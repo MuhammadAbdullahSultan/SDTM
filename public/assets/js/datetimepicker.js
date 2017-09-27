@@ -1,11 +1,20 @@
 var app=angular.module('datetimepicker', ['ngAnimate', 'ngSanitize', 'ui.bootstrap']);
 app.controller('DatepickerPopupDemoCtrl', function ($scope, uibDateParser) {
     $scope.startDT = 'dd/MM/yyyy HH:mm';
+    $scope.endDT = 'dd/MM/yyyy HH:mm';
+    $scope.yearFilter = 'yyyy';
+    $scope.monthFilter = 'MM/yyyy';
+    $scope.dateFilter = 'dd/MM/yyyy';
+
     $scope.date = new Date();
     
   $scope.today = function() {
     $scope.startDT = new Date();
     $scope.endDT = new Date();
+    $scope.yearFilter = new Date();
+    $scope.monthFilter = new Date();
+    $scope.dateFilter = new Date();
+
 
   };
   $scope.today();
@@ -13,6 +22,9 @@ app.controller('DatepickerPopupDemoCtrl', function ($scope, uibDateParser) {
   $scope.clear = function() {
     $scope.startDT = null;
     $scope.endDT = null;
+    $scope.yearFilter = null;
+    $scope.monthFilter = null;
+    $scope.dateFilter = null;
 
   };
 
@@ -32,7 +44,7 @@ app.controller('DatepickerPopupDemoCtrl', function ($scope, uibDateParser) {
   // Disable weekend selection
   function disabled(data) {
     var date = data.date,
-      mode = data.mode;
+    mode = data.mode;
     return mode === 'day' && (date.getDay() === 0 || date.getDay() === 6);
   }
 
@@ -50,14 +62,29 @@ app.controller('DatepickerPopupDemoCtrl', function ($scope, uibDateParser) {
   $scope.open2 = function() {
     $scope.popup2.opened = true;
   };
+    
+    $scope.open3 = function() {
+    $scope.popup3.opened = true;
+  };
+    
+    $scope.open4 = function() {
+    $scope.popup4.opened = true;
+  };
+    
+    $scope.open5 = function() {
+    $scope.popup5.opened = true;
+  };
 
   $scope.setDate = function(year, month, day) {
     $scope.startDT = new Date(year, month, day);
     $scope.endDT = new Date(year, month, day);
+    $scope.yearFilter = new Date(year);
+    $scope.monthFilter = new Date(year, month);
+    $scope.dateFilter = new Date(year, month, day);
 
   };
 
-  $scope.formats = ['dd/MM/yyyy HH:mm'];
+  $scope.formats = ['dd/MM/yyyy HH:mm', 'yyyy', 'MM/yyyy', 'dd/MM/yyyy' ];
   $scope.format = $scope.formats[0];
   $scope.altInputFormats = ['d!/M!/yyyy'];
 
@@ -66,6 +93,18 @@ app.controller('DatepickerPopupDemoCtrl', function ($scope, uibDateParser) {
   };
 
   $scope.popup2 = {
+    opened: false
+  };
+    
+  $scope.popup3 = {
+    opened: false
+  };
+    
+    $scope.popup4 = {
+    opened: false
+  };
+    
+    $scope.popup5 = {
     opened: false
   };
 
