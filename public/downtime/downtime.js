@@ -181,13 +181,31 @@ app.controller('downtimeCtrl', ['$scope', '$firebaseObject', '$firebaseArray', '
     
     ///////////////////////////////////////////////////
     
-    $scope.today = function() {
-    $scope.dt = new Date();
+$scope.startDT = 'dd/MM/yyyy HH:mm';
+    $scope.endDT = 'dd/MM/yyyy HH:mm';
+    $scope.yearFilter = 'yyyy';
+    $scope.monthFilter = 'MM/yyyy';
+    $scope.dateFilter = 'dd/MM/yyyy';
+
+    $scope.date = new Date();
+    
+  $scope.today = function() {
+    $scope.startDT = new Date();
+    $scope.endDT = new Date();
+    $scope.yearFilter = new Date();
+    $scope.monthFilter = new Date();
+    $scope.dateFilter = new Date();
   };
+    
   $scope.today();
 
   $scope.clear = function() {
-    $scope.dt = null;
+    $scope.startDT = null;
+    $scope.endDT = null;
+    $scope.yearFilter = null;
+    $scope.monthFilter = null;
+    $scope.dateFilter = null;
+
   };
 
   $scope.inlineOptions = {
@@ -197,8 +215,7 @@ app.controller('downtimeCtrl', ['$scope', '$firebaseObject', '$firebaseArray', '
   };
 
   $scope.dateOptions = {
-    dateDisabled: disabled,
-    formatYear: 'yy',
+    formatYear: 'yyyy',
     maxDate: new Date(2020, 5, 22),
     minDate: new Date(),
     startingDay: 1
@@ -207,7 +224,7 @@ app.controller('downtimeCtrl', ['$scope', '$firebaseObject', '$firebaseArray', '
   // Disable weekend selection
   function disabled(data) {
     var date = data.date,
-      mode = data.mode;
+    mode = data.mode;
     return mode === 'day' && (date.getDay() === 0 || date.getDay() === 6);
   }
 
@@ -225,20 +242,49 @@ app.controller('downtimeCtrl', ['$scope', '$firebaseObject', '$firebaseArray', '
   $scope.open2 = function() {
     $scope.popup2.opened = true;
   };
-
-  $scope.setDate = function(year, month, day) {
-    $scope.dt = new Date(year, month, day);
+    
+    $scope.open3 = function() {
+    $scope.popup3.opened = true;
+  };
+    
+    $scope.open4 = function() {
+    $scope.popup4.opened = true;
+  };
+    
+    $scope.open5 = function() {
+    $scope.popup5.opened = true;
   };
 
-  $scope.formats = ['dd-MMMM-yyyy', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+  $scope.setDate = function(year, month, day) {
+    $scope.startDT = new Date(year, month, day);
+    $scope.endDT = new Date(year, month, day);
+    $scope.yearFilter = new Date(year);
+    $scope.monthFilter = new Date(year, month);
+    $scope.dateFilter = new Date(year, month, day);
+
+  };
+
+  $scope.formats = ['dd/MM/yyyy HH:mm', 'yyyy', 'MM/yyyy', 'dd/MM/yyyy' ];
   $scope.format = $scope.formats[0];
-  $scope.altInputFormats = ['M!/d!/yyyy'];
+  $scope.altInputFormats = ['d!/M!/yyyy'];
 
   $scope.popup1 = {
     opened: false
   };
 
   $scope.popup2 = {
+    opened: false
+  };
+    
+  $scope.popup3 = {
+    opened: false
+  };
+    
+    $scope.popup4 = {
+    opened: false
+  };
+    
+    $scope.popup5 = {
     opened: false
   };
 

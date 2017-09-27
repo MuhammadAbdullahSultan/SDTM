@@ -14,9 +14,8 @@ app.controller('DatepickerPopupDemoCtrl', function ($scope, uibDateParser) {
     $scope.yearFilter = new Date();
     $scope.monthFilter = new Date();
     $scope.dateFilter = new Date();
-
-
   };
+    
   $scope.today();
 
   $scope.clear = function() {
