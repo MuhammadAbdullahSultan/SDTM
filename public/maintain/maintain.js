@@ -176,7 +176,7 @@ $('.dropdown-toggle b').remove().appendTo($('.dropdown-toggle').text($(this).tex
         });
     });
 
-    $('#myModal').modal('hide');
+    
     $('body').removeClass('modal-open');
     $('.modal-backdrop fade in').remove();
 function edit_row(no)
