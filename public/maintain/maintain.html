@@ -16,10 +16,9 @@
    <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
        <div class="box">
            <div class="table-responsive">
-      <table id="fruits" class="table table-hover table-inverse">
+      <table id="fruits" class="table table-hover">
          <thead class = "thead">
             <tr>
-                <td class="spacer"><input type="checkbox" class="selectallAO"></td>
                 <th class="sortable asc">Equipment Name</th>
                 <th class="sortable">System</th>
                 <th class="sortable">Description</th>        
@@ -29,7 +28,6 @@
          </thead>
          <tbody>
             <tr id="row1" data-ng-repeat = "equipments in data | offset: currentPage*unitsInPage | limitTo: unitsInPage track by $index">
-                <td class="spacer"><input type="checkbox" class="checkboxAO"> </td>
                <td id="name_row1">{{equipments.$id}}</td>
                <td id="country_row1">{{equipments.system}}</td>
                <td id="age_row1"><p>{{equipments.description}}</p></td>
@@ -51,6 +49,7 @@
                </div>
            </div>
    </div>
+    
 </div>
 
 

@@ -1,5 +1,5 @@
 /*global angular*/
-var app = angular.module('profile', ['ngRoute', 'firebase']);
+var app = angular.module('profile', ['ngRoute']);
 
 app.config(['$routeProvider', function ($routeProvider) {
     'use strict';
@@ -46,7 +46,7 @@ app.controller('profileCtrl', ['$scope', '$rootScope', '$firebaseObject', 'toast
         
         
         var userData = firebase.auth.EmailAuthProvider.credential($scope.email, $scope.currentPass);
-        firebase.auth().currentUser.reauthenticateAndRetrieveDataWithCredential(userData)
+        firebase.auth().currentUser.reauthenticateWithCredential(userData)
             .then(function() {
                 Auth.$updatePassword($scope.newPassword)
                     .then(function(){
