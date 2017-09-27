@@ -12,6 +12,8 @@
     <!-- Bootstrap core CSS-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.9.0/moment-with-locales.js"></script>
     <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css">
+        <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
+
 
     <script src="https://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/a549aa8780dbda16f6cff545aeabc3d71073911e/src/js/bootstrap-datetimepicker.js"></script>
     <link rel="stylesheet" href="https://cdn.rawgit.com/Eonasdan/bootstrap-datetimepicker/a549aa8780dbda16f6cff545aeabc3d71073911e/build/css/bootstrap-datetimepicker.css">
@@ -32,32 +34,38 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarResponsive">
             <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                <li class="nav-item" data-placement="right" title="Dashboard">
                     <a class="nav-link" href="#!sdt">
                         <i class="fa fa-fw fa-dashboard"></i>
                         <span class="nav-link-text">Dashboard</span>
                     </a>
                 </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Charts">
+                <li class="nav-item" data-placement="right" title="Charts">
                     <a class="nav-link" href="#!downtime">
                         <i class="fa fa-fw fa-area-chart"></i>
                         <span class="nav-link-text">Manage Downtime</span>
                     </a>
                 </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+                <li class="nav-item" data-placement="right" title="Tables">
                     <a class="nav-link" href="#!maintain">
                         <i class="fa fa-fw fa-table"></i>
                         <span class="nav-link-text">Manage Equipment</span>
                     </a>
                 </li>
-                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+                <li class="nav-item" data-placement="right" title="Tables">
                     <a class="nav-link" href="#!create">
                         <i class="fa fa-fw fa-user"></i>
                         <span class="nav-link-text">Manage User</span>
                     </a>
                 </li>
             </ul>
-
+            <ul class="navbar-nav sidenav-toggler">
+                <li class="nav-item">
+                  <a class="nav-link text-center" id="sidenavToggler">
+                    <i class="fa fa-fw fa-angle-left"></i>
+                  </a>
+                </li>
+              </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a href="#!profile" class="nav-link">
@@ -95,7 +103,6 @@
     <script src="assets/js/toaster.min.js"></script>
     
     <!-- jquery ui -->
-    <script src="http://code.jquery.com/ui/1.11.0/jquery-ui.js"></script>
     <!-- modernizr -->
     <script src="assets/js/modernizr.custom.79639.js"></script>
     <!-- sb admin js -->
