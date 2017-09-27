@@ -1,4 +1,4 @@
-var app=angular.module('ui.bootstrap.demo', ['ngAnimate', 'ngSanitize', 'ui.bootstrap']);
+var app=angular.module('datetimepicker', ['ngAnimate', 'ngSanitize', 'ui.bootstrap']);
 app.controller('DatepickerPopupDemoCtrl', function ($scope) {
   $scope.today = function() {
     $scope.dt = new Date();
