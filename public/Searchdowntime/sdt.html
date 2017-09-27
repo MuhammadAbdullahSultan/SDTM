@@ -110,7 +110,42 @@
         
     </span>
 
-</div></form>
+</div>
+    
+    <div ng-controller="DatepickerPopupDemoCtrl">
+                    <div class="row" style="margin: 5px">
+                      <div class="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <label for="date">Start of Downtime</label>
+                            <br>
+                        <p class="input-group">
+                          <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="startDT" is-open="popup1.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" placeholder="Day-Month-Year Hour:Minute" />
+                          <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="open1()"><i class="fa fa-calendar"></i></button>
+                          </span>
+                        </p>
+                          {{startDT | date:'fullDate' }}
+                      </div>
+                    
+                      <div class="form-group col-xs-6 col-sm-6 col-md-6 col-lg-6">
+                        <label for="date">End of Downtime</label>
+                            <br>
+                          <p class="input-group">
+                          <input type="text" class="form-control" uib-datepicker-popup="{{format}}" ng-model="endDT" is-open="popup2.opened" datepicker-options="dateOptions" ng-required="true" close-text="Close" alt-input-formats="altInputFormats" placeholder="Day-Month-Year Hour:Minute" />
+                          <span class="input-group-btn">
+                            <button type="button" class="btn btn-default" ng-click="open2()"><i class="fa fa-calendar"></i></button>
+                          </span>
+                        </p>
+                          {{endDT | date:'fullDate' }}
+                      </div>
+                    </div>
+                    <div class="row" style="margin: 5px">
+                      <div class="col-md-6">
+                        <label>Format: </label> <select class="form-control" ng-model="format" ng-options="f for f in formats"><option></option></select>
+                      </div>
+                    </div>
+                </div>
+
+</form>
 
 <div class="modal fade" id="viewGraph">
    <div class="modal-dialog modal-lg">

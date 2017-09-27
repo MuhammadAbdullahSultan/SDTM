@@ -1,5 +1,8 @@
 var app=angular.module('datetimepicker', ['ngAnimate', 'ngSanitize', 'ui.bootstrap']);
-app.controller('DatepickerPopupDemoCtrl', function ($scope) {
+app.controller('DatepickerPopupDemoCtrl', function ($scope, uibDateParser) {
+    $scope.startDT = 'dd/MM/yyyy HH:mm';
+    $scope.date = new Date();
+    
   $scope.today = function() {
     $scope.startDT = new Date();
     $scope.endDT = new Date();
@@ -54,9 +57,9 @@ app.controller('DatepickerPopupDemoCtrl', function ($scope) {
 
   };
 
-  $scope.formats = ['dd-MMMM-yyyy hh:mm', 'yyyy/MM/dd', 'dd.MM.yyyy', 'shortDate'];
+  $scope.formats = ['dd/MM/yyyy HH:mm'];
   $scope.format = $scope.formats[0];
-  $scope.altInputFormats = ['M!/d!/yyyy'];
+  $scope.altInputFormats = ['d!/M!/yyyy'];
 
   $scope.popup1 = {
     opened: false
