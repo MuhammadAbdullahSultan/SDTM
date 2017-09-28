@@ -89,8 +89,8 @@
             
 			<div class="form-group">
                 <label for="dtp_input1" class="col-md-2 control-label">Select Year</label>
-                <div class="input-group date form_date col-md-5" data-date="" data-date-format="yyyy" data-link-field="dtp_input1" data-link-format="yyyy">
-                    <input class="form-control" size="16" type="text" value="" readonly  data-ng-model="yearFilter">
+                <div class="input-group date form_date col-md-5" data-date="" data-date-format="yyyy" data-link-field="dtp_input1" data-link-format="yyyy" data-ng-model="yearFilter">
+                    <input class="form-control" size="16" type="text" value="" readonly data-ng-model="yearFilter">
 					<span class="input-group-addon"><span class="fa fa-calendar"></span></span>
                 </div>
 				<input type="hidden" id="dtp_input1" value="" />
@@ -104,9 +104,7 @@
                     <input class="form-control" size="16" type="text" value="" readonly data-ng-model="monthFilter">
 					<span class="input-group-addon"><span class="fa fa-calendar"></span></span>
                 </div>
-				<input type="hidden" id="dtp_input2" value="" />
-                {{monthFilter}}
-                <br/>
+				<input type="hidden" id="dtp_input2" value="" /><br/>
             </div>
             
             <div class="form-group">
@@ -115,9 +113,7 @@
                     <input class="form-control" size="16" type="text" value="" readonly data-ng-model="dayFilter">
 					<span class="input-group-addon"><span class="fa fa-calendar"></span></span>
                 </div>
-				<input type="hidden" id="dtp_input3" value="" />
-                {{dayFilter}}
-                <br/>
+				<input type="hidden" id="dtp_input3" value="" /><br/>
             </div>
 			
         </fieldset>
