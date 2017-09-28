@@ -57,7 +57,7 @@ app.controller('maintainCtrl', ['$scope', '$firebaseObject', '$firebaseArray', '
     if(this.value.length > 100){
         return false;
     }
-    $("#remainingC").html("Remaining characters : " +(50 - this.value.length));
+    $("#remainingC").html("Remaining characters : " +(100 - this.value.length));
 });
     
      $('.dropdown-menu input').click(function (e) {

@@ -40,26 +40,16 @@ app.controller('createUserCtrl', ['$scope', '$rootScope', '$firebaseObject', 'Au
     
     // Create new user
     $scope.createUser = function() {
-        
-        if($scope.email == undefined) {
-            toaster.pop({type: 'error', title: "Error", body: 'Empty Email Field'});
-            return;
-        }
-        
-        if($scope.password == undefined) {
-            toaster.pop({type: 'error', title: "Error", body: 'Empty Password Field'});
-            return;
-        }
       Auth.$createUserWithEmailAndPassword($scope.email, $scope.password)
         .then(function(firebaseUser) {
           // Store user into database
             var uid = firebaseUser.uid;
             firebase.database().ref("users/" + uid).set($scope.email);
           // pop toaster for success
-            toaster.pop({type: 'success', title: "User Account created", body: "A new user has been added"});
+            toaster.pop({type: 'successs', title: "User Account created", body: "A new user has been added"});
         }).catch(function(error) {
             $scope.error = error;
-            toaster.pop({type: 'error', title: "Error", body: error});
+            toaster.pop({type: 'danger', title: "Error", body: error});
         });
     };
 }]);
