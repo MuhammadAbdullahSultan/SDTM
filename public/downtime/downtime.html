@@ -228,7 +228,7 @@
     
     <div>
         <div class="card-header">
-          <i class="fa fa-table"></i> Data Table Example</div>
+          <i class="fa fa-table"></i> Downtime Data</div>
         <div class="card-body">
           <div class="table-responsive">
             <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
@@ -244,14 +244,12 @@
                   <tr data-ng-repeat="d in allDT | filter: equipment | filter: type | filter: obj | filter: start track by $index" data-ng-if="d != null">
                      <td headers = "equipment">{{d.equipment}}</td>
                      <td headers = "start">{{d.start}}</td>
-                     <td data-ng-if="">NO DATA TO SHOW</td>
                      <td headers = "end">{{d.end}}</td>
                      <td headers = "type">{{d.type}}</td>
                   </tr>
                </tbody>
                 
                 <tfoot>
-                <h4>Default</h4>
                 <ul uib-pagination total-items="totalItems" ng-model="currentPage" ng-change="pageChanged()"></ul>
                 </tfoot>
             </table>
