@@ -12,6 +12,15 @@ app.config(['$routeProvider', function ($routeProvider) {
 app.controller('downtimeCtrl', ['$scope', '$firebaseObject', '$firebaseArray', 'toaster', function ($scope, $firebaseObject, $firebaseArray, toaster) {
     'use strict';
     
+//    $scope.initializeExport = function() {
+//        
+//        onClick =$('#dataTable').tableExport({
+//        type:'excel',escape:'false'
+//    });
+//    });
+        
+    
+    
     $('.form_datetime').datetimepicker({
         weekStart: 1,
         todayBtn:  1,
@@ -380,4 +389,7 @@ app.directive('customzdatetime', function () {
         }
     };
 });
+
+//Initialize Export to Excel
+
 

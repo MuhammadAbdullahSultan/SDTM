@@ -4,6 +4,8 @@
 // DEFINING ANGULAR MODULE ngCookies
 /*jshint sub:true*/
 var app = angular.module('myApp', ['ngRoute', 'chart.js', 'downtime', 'maintain', 'create', 'sdt', 'firebase', 'ngAnimate', 'toaster', 'profile']);
+
+
 var config = {
     apiKey: "AIzaSyDlZwVsbxI6V161f7ZcyCsy_mg4-GRFwxo",
     authDomain: "xfab-downtime.firebaseapp.com",
@@ -13,6 +15,8 @@ var config = {
     messagingSenderId: "937142810228"
   };
   firebase.initializeApp(config);
+
+
 app.config(['$routeProvider', function ($routeProvider) {
     'use strict';
     $routeProvider.otherwise({
@@ -22,20 +26,34 @@ app.config(['$routeProvider', function ($routeProvider) {
     $(document).ready(function(){
      
         // ===== Scroll to Top ==== 
-$(window).scroll(function() {
-    if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
-        $('#return-to-top').fadeIn(200);    // Fade in the arrow
-    } else {
-        $('#return-to-top').fadeOut(200);   // Else fade out the arrow
-    }
-});
-$('#return-to-top').click(function() {      // When arrow is clicked
-    $('body,html').animate({
-        scrollTop : 0                       // Scroll to top of body
-    }, 500);
-});
-})
-}]);
+    $(window).scroll(function() {
+        if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
+            $('#return-to-top').fadeIn(200);    // Fade in the arrow
+        } else {
+            $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+        }
+    });
+        
+    $('#return-to-top').click(function() {      // When arrow is clicked
+        $('body,html').animate({
+            scrollTop : 0                       // Scroll to top of body
+        }, 500);
+    });
+    })
+    
+    $(document).ready(function() {
+            $('#example').DataTable( {
+                dom: 'Bfrtip',
+                buttons: [
+                    'copyHtml5',
+                    'excelHtml5',
+                    'csvHtml5',
+                    'pdfHtml5'
+                ]
+            } );
+        } );
+    
+    }]);
 
 app.controller('myCtrl', ['$scope', '$http', function ($scope, $http) {
         $scope.labels = ['Equipment 1', 'Equipment 2', 'Equipment 3', 'Equipment 4'];
@@ -158,11 +176,17 @@ app.controller('myCtrlPercent', ['$scope', '$http', function ($scope, $http) {
     $scope.dataPercent = [5, 6, 7, 12];
 }]);
 
+//Export to Excel
+
+
+
 app.factory("Auth", ["$firebaseAuth",
   function($firebaseAuth) {
     return $firebaseAuth();
   }
 ]);
+
+
 
 app.controller('authCtrl', ['$scope', '$rootScope', '$firebaseObject', 'Auth', function ($scope, $rootScope, $firebaseObject, Auth) {
            $scope.createUser = function() {

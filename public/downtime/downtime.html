@@ -152,60 +152,64 @@
 </div>
 -->
     
-<a class="btn cd-add-to-cart cd-add-to-cart:hover cd-add-to-cart:active" role="button" data-ng-click="writeUserData(equipment, system)" data-ng-click="initializeExport()" title="Export table (Excel) to computer"><span class="fa fa-fw fa-file-excel-o"></span></a>
-<a class="btn cd-add-to-cart cd-add-to-cart:hover cd-add-to-cart:active" role="button" data-ng-click="writeUserData(equipment, system)" data-ng-click="initializePrint()" title="Print table to PDF"><span class="fa fa-fw fa-file-pdf-o"></span></a>
-<div class="modal fade" id="manageDT">
-   <div class="modal-dialog modal-lg">
-      <div class="modal-content txtsize">
-         <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title">Add Downtime </h4>
-         </div>
-         <div class="modal-body">
-            <div class="row">
-               <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12" id="equipList">
-                  <label for="selectequ">Select Equipment</label>
-                  <select class="form-control" id="selectequ" data-ng-model="addEquipment">
-                     <option value="" disabled="" selected="" style="display: none">Select Equipment</option>
-                     <option data-ng-repeat="eq in add track by $index" >{{eq.$id}}</option>
-                  </select>
-                  <!--                <p data-ng-model="add[$indexFor(addEquipment)].system"></p>-->
-               </div>
-               {{addEquipment}}
-               <!--
-                  {{addEquipment}}
-                  
-                  {{toStore}}
-                  <br>
-                  {{add[$indexFor(addEquipment)].system}}
-                  -->
-               <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12" id="Type">
-                  <label for="searchType">Search by Type:</label>
-                  <select class="form-control" id="searchType" data-ng-model="type">
-                     <option value="" disabled="" selected="" style="display: none">Select type of maintenance</option>
-                     <option>Corrective Maintenance</option>
-                     <option>Preventive Maintenance</option>
-                     <option>Standby</option>
-                  </select>
-               </div>
-                
-               <div class="container">
-                    <form action="" class="form-horizontal"  role="form">
-                        <fieldset>
-                            <div class="form-group">
-                                <label for="dtp_input4" class="col-md-2 control-label">Start Time</label>
-                                <div class="input-group date form_datetime col-md-5" data-date="1979-09-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
-                                    <input class="form-control" size="16" type="text" value="" readonly data-ng-model="startDT">
-                                    <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
-                                </div>
-                                <input type="hidden" id="dtp_input4" value="" />
-                                {{startDT}}
-                                <br/>
-                            </div>
+            <a href="" class="btn cd-add-to-cart cd-add-to-cart:hover cd-add-to-cart:active" role="button" data-ng-click="initializeExport()" title="Export table (Excel) to computer" onClick ="$('#dataTable').tableExport({type:'excel',escape:'false'});"><span class="fa fa-fw fa-file-excel-o"></span></a>
+    
+<!--    onClick ="$('#dataTable').tableExport({type:'excel',escape:'false'});"-->
+    
+            <a class="btn cd-add-to-cart cd-add-to-cart:hover cd-add-to-cart:active" role="button" data-ng-click="writeUserData(equipment, system)" data-ng-click="initializePrint()" title="Print table to PDF"><span class="fa fa-fw fa-file-pdf-o"></span></a>
+    
+            <div class="modal fade" id="manageDT">
+               <div class="modal-dialog modal-lg">
+                  <div class="modal-content txtsize">
+                     <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                        <h4 class="modal-title">Add Downtime </h4>
+                     </div>
+                     <div class="modal-body">
+                        <div class="row">
+                           <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12" id="equipList">
+                              <label for="selectequ">Select Equipment</label>
+                              <select class="form-control" id="selectequ" data-ng-model="addEquipment">
+                                 <option value="" disabled="" selected="" style="display: none">Select Equipment</option>
+                                 <option data-ng-repeat="eq in add track by $index" >{{eq.$id}}</option>
+                              </select>
+                              <!--                <p data-ng-model="add[$indexFor(addEquipment)].system"></p>-->
+                           </div>
+                           {{addEquipment}}
+                           <!--
+                              {{addEquipment}}
 
-                            <div class="form-group">
-                                <label for="dtp_input5" class="col-md-2 control-label">End Time</label>
-                                <div class="input-group date form_datetime col-md-5" data-date="1979-09-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+                              {{toStore}}
+                              <br>
+                              {{add[$indexFor(addEquipment)].system}}
+                              -->
+                           <div class="form-group col-xs-12 col-sm-12 col-md-12 col-lg-12" id="Type">
+                              <label for="searchType">Search by Type:</label>
+                              <select class="form-control" id="searchType" data-ng-model="type">
+                                 <option value="" disabled="" selected="" style="display: none">Select type of maintenance</option>
+                                 <option>Corrective Maintenance</option>
+                                 <option>Preventive Maintenance</option>
+                                 <option>Standby</option>
+                              </select>
+                           </div>
+
+                           <div class="container">
+                                <form action="" class="form-horizontal"  role="form">
+                                    <fieldset>
+                                        <div class="form-group">
+                                            <label for="dtp_input4" class="col-md-2 control-label">Start Time</label>
+                                            <div class="input-group date form_datetime col-md-5" data-date="1979-09-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
+                                                <input class="form-control" size="16" type="text" value="" readonly data-ng-model="startDT">
+                                                <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
+                                            </div>
+                                            <input type="hidden" id="dtp_input4" value="" />
+                                            {{startDT}}
+                                            <br/>
+                                        </div>
+
+                                        <div class="form-group">
+                                            <label for="dtp_input5" class="col-md-2 control-label">End Time</label>
+                                            <div class="input-group date form_datetime col-md-5" data-date="1979-09-16T05:25:07Z" data-date-format="dd MM yyyy - HH:ii p" data-link-field="dtp_input1">
                                     <input class="form-control" size="16" type="text" value="" readonly data-ng-model="endDT">
                                     <span class="input-group-addon"><span class="fa fa-calendar"></span></span>
                                 </div>
