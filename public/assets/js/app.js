@@ -3,7 +3,8 @@
 /*global angular */
 // DEFINING ANGULAR MODULE ngCookies
 /*jshint sub:true*/
-var app = angular.module('myApp', ['ngRoute', 'chart.js', 'downtime', 'maintain', 'create', 'sdt', 'firebase', 'ngAnimate', 'toaster', 'profile']);
+var app = angular.module('myApp', ['ngRoute', 'chart.js', 'downtime', 'maintain', 'create', 'sdt', 'firebase', 'ngAnimate', 'toaster', 'profile', 'ui.bootstrap']);
+
 var config = {
     apiKey: "AIzaSyDlZwVsbxI6V161f7ZcyCsy_mg4-GRFwxo",
     authDomain: "xfab-downtime.firebaseapp.com",
@@ -12,7 +13,8 @@ var config = {
     storageBucket: "xfab-downtime.appspot.com",
     messagingSenderId: "937142810228"
   };
-  firebase.initializeApp(config);
+
+firebase.initializeApp(config);
 app.config(['$routeProvider', function ($routeProvider) {
     'use strict';
     $routeProvider.otherwise({
@@ -96,8 +98,7 @@ app.controller('myCtrl', ['$scope', '$http', function ($scope, $http) {
             }
     
     $scope.data = [5, 6, 7, 12];
-}
-                          ]);
+}]);
 
 app.controller('myCtrlPercent', ['$scope', '$http', function ($scope, $http) {
             $scope.labelsPercent = ['Equipment 1', 'Equipment 2', 'Equipment 3', 'Equipment 4'];
